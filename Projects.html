@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagercoil Builders</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #040837;
+      padding: 20px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    .logoimg {
+      width: 110px;
+      height: 55px;
+      object-fit: cover;
+    }
+
+    .button1 {
+      background-color: orange;
+      color: #040837;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .button1:hover {
+      color: black;
+      background-color: #ffb84d;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url('images/lighthouse.png') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content {
+      position: relative;
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+    .milestone-section {
+      padding: 60px 40px;
+    }
+
+    .milestone-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .milestone-title span {
+      color: #f4b400; /* golden color */
+    }
+
+    .milestone-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+       padding: 10px 0; /* reduce top/bottom space */
+  margin: 0; /* remove default section margin */
+    }
+    
+
+    .milestone-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 200px;
+      height: 250px;
+    }
+
+    .milestone-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .milestone-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .milestone-container {
+        gap: 20px;
+      }
+
+      .milestone-card {
+        width: 180px;
+        height: 180px;
+      }
+    }
+    footer {
+      background-color: #050a3c;
+      color: white;
+      padding: 50px 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      line-height: 1.8;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+     .social-icons a img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #ffcc00;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    .footer-title {
+      font-size: 1.4rem;
+      color: #ffcc00;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffcc00;
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      color: #ddd;
+    }
+
+    .contact-info li i {
+      color: #ffcc00;
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .footer-column {
+        margin-bottom: 40px;
+      }
+    }
+    .contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  color: #ddd;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  background-color: white;
+  color: #000;
+  font-size: 16px;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 16px;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+    <a href="index.html"><img src="images/logo.jpg" class="logoimg" alt="logo"></a>
+    <ul class="nav-links">
+      <li><a href="About-Us.html">About-Us</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="Plan-Pricing.html">Plan-Pricing</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="form.html" class="button1">Enquiry</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      
+    </div>
+  </section>
+  <section class="milestone-section">
+    <h2 class="milestone-title">Our <span>Milestones</span></h2>
+
+    <div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo1.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo2.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo3.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo4.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo5.png" alt="Milestone 5">
+      </div>
+    </div>
+  </section>
+<section>
+  <div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo6.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo7.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo8.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo9.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo10.png" alt="Milestone 5">
+      </div>
+    </div>
+  </section>
+<section>
+    <div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo11.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo12.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo13.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo14.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo15.png" alt="Milestone 5">
+      </div>
+    </div>
+  </section>
+  <div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo16.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo17.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo18.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo19.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo20.png" alt="Milestone 5">
+      </div>
+    </div>
+      <div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo21.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo22.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo23.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo24.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo25.png" alt="Milestone 5">
+      </div>
+    </div>
+<div class="milestone-container">
+      <div class="milestone-card">
+        <img src="images/photo26.png" alt="Milestone 1">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo27.png" alt="Milestone 2">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo28.png" alt="Milestone 3">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo29.png" alt="Milestone 4">
+      </div>
+      <div class="milestone-card">
+        <img src="images/photo30.png" alt="Milestone 5">
+      </div>
+    </div>
+    <footer>
+    <!-- Left Column -->
+    <div class="footer-column">
+      <div class="footer-logo">
+        <img src="images/logo.jpg" alt="Nagercoil Builders Logo">
+      </div>
+      <div class="footer-about">
+        <p>
+          Nagercoil Builders offering a range of services from residential and commercial building to interior design and renovation.
+        </p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="images/inst.png" alt="Instagram"></a>
+        <a href="#"><img src="images/you.png" alt="YouTube"></a>
+        <a href="#"><img src="images/face.png" alt="Facebook"></a>
+      </div>
+    </div>
+
+    <!-- Middle Column -->
+    <div class="footer-column">
+      <h3 class="footer-title">Categories</h3>
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Plans and Pricing</a>
+        <a href="#">Projects</a>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+   <div class="footer-column">
+    <h3 class="footer-title">Contact Us</h3>
+    <ul class="contact-info">
+      <li><i class="fa-solid fa-phone"></i> +91 9597751076, 9443102048</li>
+      <li><i class="fa-solid fa-envelope"></i> nagercoilbuilders2@gmail.com</li>
+      <li><i class="fa-solid fa-globe"></i> www.nagercoilbuilders.com</li>
+      <li><i class="fa-solid fa-location-dot"></i> 4/26A Adaikalapattinam, Pavoorchatram.</li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

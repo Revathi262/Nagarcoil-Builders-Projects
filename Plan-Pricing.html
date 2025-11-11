@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nagarcoil Builders</title>
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  
+
+    header {
+      background-color: #040837;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    .logoimg {
+      width: 110px;
+      height: 55px;
+      object-fit: cover;
+    }
+
+    .button1 {
+      background-color: orange;
+      color: #040837;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .button1:hover {
+      background-color: white;
+      color: #040837;
+    }
+
+    /* === Hero Section === */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background-image: url('images/lighting.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 8, 55, 0.3);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: white;
+      z-index: 2;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .design-packages {
+      text-align: center;
+      padding: 70px 20px;
+      background-color: #fff;
+      color: #040837;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .design-packages h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .design-packages h2 span {
+      color: #ffb400;
+    }
+
+    .design-packages p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 40px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .package-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .basic {
+      background-color: #ffb400;
+      color: #040837;
+    }
+
+    .standard,
+    .premium {
+      background-color: #040837;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    /* === Package Card Center === */
+    .package-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 0;
+      background: #f8f8f8;
+    }
+
+    .package-banner {
+      position: relative;
+      width: 260px;
+      background: linear-gradient(180deg, #ffd700 0%, #0023ff 100%);
+      border-radius: 0 0 120px 120px;
+      text-align: center;
+      padding: 40px 20px 80px;
+      color: white;
+      overflow: visible;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Arrow shapes */
+    .package-banner::before,
+    .package-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #0023ff, #ffd700);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    .package-banner::before {
+      left: 0;
+    }
+
+    .package-banner::after {
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .package-banner h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .package-banner h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffcc00;
+      margin-top: 5px;
+    }
+
+    .price {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #ffcc00;
+      margin: 10px 0 5px;
+    }
+
+    .currency {
+      font-size: 1.2rem;
+      vertical-align: super;
+    }
+
+    .package-banner p {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .curve {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 100px;
+    }
+
+    .curve::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 100px;
+      border-bottom: 3px solid black;
+      border-radius: 0 0 100px 100px;
+      left: 0;
+      bottom: 15px;
+    }
+
+    .dot {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ffd700;
+      border-radius: 50%;
+      bottom: 10px;
+    }
+
+    .dot.left {
+      left: 0;
+    }
+
+    .dot.right {
+      right: 0;
+    }
+
+    @media (max-width: 480px) {
+      .package-banner {
+        width: 220px;
+        padding: 30px 15px 70px;
+      }
+      .price {
+        font-size: 2rem;
+      }
+    }
+    .work-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    padding: 60px 20px;
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  .work-card {
+    
+    background-color: #ffeb3b;
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px 20px 25px;
+   
+  }
+
+  /* === Header ribbon === */
+  .work-card h3 {
+    background: linear-gradient(135deg, #040837, #3b3f9b);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+  }
+
+  .work-card ul {
+    list-style: none;
+    margin-top: 40px;
+  }
+
+  .work-card li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.95rem;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .work-card li i {
+    color: #040837;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .work-section {
+      flex-direction: column;
+      align-items: center;
+    }}
+  footer {
+      background-color: #050a3c;
+      color: white;
+      padding: 50px 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      line-height: 1.8;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+  /* Social Icons */
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    .social-icons a img {
+      width: 35px;
+      height: 35px;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-title {
+      font-size: 1.4rem;
+      color: #ffcc00;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffcc00;
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      color: #ddd;
+    }
+
+    .contact-info li i {
+      color: #ffcc00;
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .footer-column {
+        margin-bottom: 40px;
+      }
+    }
+
+
+    
+  </style>
+</head>
+
+<body>
+  <header>
+   <nav>
+    <a href="index.html"><img src="images/logo.jpg" class="logoimg" alt="logo"></a>
+    <ul class="nav-links">
+      <li><a href="About-Us.html">About-Us</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="Plan-Pricing.html">Plan-Pricing</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="form.html" class="button1">Enquiry</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content"></div>
+  </section>
+
+  <section class="design-packages">
+    <h2>Choose Your <span>Design</span> Packages</h2>
+    <p>
+      Our Design Package feature allows you to select a construction design plan that best fits your vision and budget.
+      Whether you need a Basic, Standard, or Premium package, we offer tailored solutions with detailed architectural layouts,
+      3D renderings, and expert consultations. Simplify your construction journey with a design package that meets your needs!
+    </p>
+
+    <div class="package-buttons">
+      <a href="#" class="btn basic">Basic Package</a>
+      <a href="#" class="btn standard">Standard Package</a>
+      <a href="#" class="btn premium">Premium Package</a>
+    </div>
+  </section>
+
+  <section class="package-card">
+    <div class="package-banner">
+      <h3>Basic</h3>
+      <h4>Package</h4>
+      <div class="price"><span class="currency">₹</span>1600</div>
+      <p>Per Sq Feet</p>
+
+      <div class="curve">
+        <span class="dot left"></span>
+        <span class="dot right"></span>
+      </div>
+    </div>
+  </section>
+  <section class="work-section">
+  <!-- Constructions -->
+  <div class="work-card">
+    <h3>Constructions</h3>
+    <ul>
+      <li><i class="fa-solid fa-drafting-compass"></i>Plan - 2D Only</li>
+      <li><i class="fa-solid fa-layer-group"></i>Foundation - Load Bearing (Black Stone)</li>
+      <li><i class="fa-solid fa-brick"></i>Brick - Country Brick</li>
+      <li><i class="fa-solid fa-mountain"></i>Sand - M Sand</li>
+      <li><i class="fa-solid fa-cube"></i>Cement - Shankar</li>
+      <li><i class="fa-solid fa-ruler"></i>Steel - 550 D TMT</li>
+      <li><i class="fa-solid fa-border-all"></i>Flooring - Tiles ₹40/Sq Ft</li>
+    </ul>
+  </div>
+
+  <!-- Electrical work -->
+  <div class="work-card">
+    <h3>Electrical work</h3>
+    <ul>
+      <li><i class="fa-solid fa-bolt"></i>Wire - Kundan</li>
+      <li><i class="fa-solid fa-toggle-on"></i>Switch - Hi Fi (Normal)</li>
+      <li><i class="fa-solid fa-square"></i>Switch Board - Wooden Board</li>
+      <li><i class="fa-solid fa-lightbulb"></i>Lights - Limited</li>
+      <li><i class="fa-solid fa-plug"></i>Wiring - Single Phase</li>
+    </ul>
+  </div>
+
+  <!-- Plumbing & Painting -->
+  <div class="work-card">
+    <h3>Plumbing & Painting</h3>
+    <ul>
+      <li><i class="fa-solid fa-toilet"></i>Sanitary Item - 1 Western Closet + Shower</li>
+      <li><i class="fa-solid fa-water"></i>Tap Fittings - PVC Normal</li>
+      <li><i class="fa-solid fa-brush"></i>Painting - White Wash Only</li>
+      <li><i class="fa-solid fa-tint"></i>Overhead Tank - 1000L (One Piece)</li>
+      <li><i class="fa-solid fa-bottle-droplet"></i>2000L Sump + Septic Tank Free</li>
+    </ul>
+  </div>
+
+  <!-- Extra work -->
+  <div class="work-card">
+    <h3>Extra work</h3>
+    <ul>
+      <li><i class="fa-solid fa-bolt"></i>Temporary EB Connection</li>
+      <li><i class="fa-solid fa-border-top-left"></i>Compound Wall</li>
+      <li><i class="fa-solid fa-up-down"></i>Foundation Additional Height</li>
+      <li><i class="fa-solid fa-faucet-drip"></i>Borewell + Motor + Labor</li>
+      <li><i class="fa-solid fa-tree"></i>Wood - Neem (Nilai Window)</li>
+      <li><i class="fa-solid fa-door-closed"></i>Door - Laminate Door</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+    <!-- Left Column -->
+    <div class="footer-column">
+      <div class="footer-logo">
+        <img src="images/logo.jpg" alt="Nagercoil Builders Logo">
+      </div>
+      <div class="footer-about">
+        <p>
+          Nagercoil Builders offering a range of services from residential and commercial building to interior design and renovation.
+        </p>
+      </div>
+         <div class="social-icons">
+        <a href="#"><img src="images/inst.png" alt="Instagram"></a>
+        <a href="#"><img src="images/you.png" alt="YouTube"></a>
+        <a href="#"><img src="images/face.png" alt="Facebook"></a>
+      </div>
+    </div>
+    <!-- Middle Column -->
+    <div class="footer-column">
+      <h3 class="footer-title">Categories</h3>
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Plans and Pricing</a>
+        <a href="#">Projects</a>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="footer-column">
+      <h3 class="footer-title">Contact Us</h3>
+      <ul class="contact-info">
+        <li><i class="fa-solid fa-phone"></i> +91 9597751076, 9443102048</li>
+        <li><i class="fa-solid fa-envelope"></i> nagercoilbuilders2@gmail.com</li>
+        <li><i class="fa-solid fa-globe"></i> www.nagercoilbuilders.com</li>
+        <li><i class="fa-solid fa-location-dot"></i> 4/26A Adaikalapattinam, Pavoorchatram.</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

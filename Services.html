@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagercoil Builders</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   
+    /* === HEADER === */
+    header {
+      background-color: #040837;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .logoimg {
+      width: 110px;
+      height: 55px;
+      object-fit: cover;
+    }
+
+    .button1 {
+      background-color: orange;
+      color: #040837;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    .button1:hover {
+      color: black;
+      background-color: #ffcc33;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('images/big.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* Overlay effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* === SERVICES SECTION === */
+    .services-section {
+      text-align: center;
+      padding: 80px 100px;
+      background-color: #fff;
+    }
+
+    .services-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .services-section h2 span {
+      color: #f4c10f; /* Yellow color for 'Services' */
+    }
+
+    .services-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 1000px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      width: 1200px;
+      margin: 0 100px; /* remove default section margin */
+
+      padding: 10px 0; /* reduce top/bottom space */
+    }
+    
+
+    .card {
+        flex: 1;
+      position: relative;
+      width: 600px;
+      height: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .label {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background-color: #001b8e; /* dark blue */
+      color: white;
+      font-weight: 600;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .project-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+   margin: 0 100px; /* remove default section margin */
+
+      padding: 10px 0; /* reduce top/bottom space */
+  width:  1200px;
+  flex-wrap: nowrap; /* prevent shrinking */
+}
+
+/* Base card style */
+.p-card {
+  position: relative;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* stop shrinking */
+}
+
+/* ✅ Individual widths */
+.p-card:first-child {
+  width: 700px; /* increase width of first image */
+}
+
+.p-card:last-child {
+  width: 500px; /* smaller second card */
+}
+
+.p-card:hover {
+  transform: scale(1.02);
+}
+
+.p-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #0026ff;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .project-cards {
+    flex-wrap: wrap; /* stack on small screens */
+  }
+
+  .p-card {
+    width: 90% !important;
+    height: 250px;
+  }
+}
+
+    
+    .container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      position: relative;
+      width: 600px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .card button {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: #001f99;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .card button:hover {
+      background-color: #0033cc;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+    }
+
+    footer {
+      background-color: #040837;
+      color: white;
+      padding: 60px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 280px;
+      margin: 20px;
+    }
+
+    .footer-logo img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo h2 {
+      color: #ffb400;
+      margin-bottom: 20px;
+    }
+
+    .footer-section p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      color: white;
+      background: transparent;
+      margin-right: 12px;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a img {
+      width: 35px;
+      height: 35px;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-section h3 {
+      color: #ffb400;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #ffb400;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .contact-info i {
+      color: #ffb400;
+      margin-right: 10px;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin: 20px 0;
+      }
+
+      .contact-info div {
+        justify-content: center;
+      }
+    }
+    .contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  color: #ddd;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  background-color: #f0b429;
+  color: #000;
+  font-size: 16px;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 16px;
+}
+
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- === HEADER === -->
+  <header>
+    <nav>
+    <a href="index.html"><img src="images/logo.jpg" class="logoimg" alt="logo"></a>
+    <ul class="nav-links">
+      <li><a href="About-Us.html">About-Us</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="Plan-Pricing.html">Plan-Pricing</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="form.html" class="button1">Enquiry</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- === HERO SECTION === -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- You can add hero text or buttons here -->
+    </div>
+  </section>
+
+  <!-- === SERVICES SECTION === -->
+  <section class="services-section">
+  
+  
+  
+  
+  
+  
+  
+    <h2><span>Services</span> We Provide</h2>
+    <p>
+      We offer a comprehensive range of construction services, including residential and commercial building,
+      renovation, interior design, and project management. Our skilled team ensures high-quality craftsmanship,
+      timely delivery, and cost-effective solutions. From concept to completion, we turn your ideas into reality
+      with excellence and reliability.
+    </p>
+  </section>
+
+
+   <section class="service-cards">
+    <div class="card">
+      <img src="images/consulting.png" alt="Consulting">
+      <div class="label">Consulting</div>
+    </div>
+
+    <div class="card">
+      <img src="images/Estimate.png" alt="Estimate">
+      <div class="label">Estimate</div>
+    </div>
+    </section>
+ 
+  <section class="project-cards">
+  <div class="p-card">
+    <img src="images/plan and design.JPG" alt="Plan & Design">
+    <div class="p-label">Plan & Design</div>
+  </div>
+
+  <div class="p-card">
+    <img src="images/construction.png" alt="Construction">
+    <div class="p-label">Construction</div>
+  </div>
+</section>
+
+ <section class="service-cards">
+    <div class="card">
+      <img src="images/floor.png" alt="Consulting">
+      <div class="label">Flooring</div>
+    </div>
+
+    <div class="card">
+      <img src="images/painting.png" alt="Estimate">
+      <div class="label">Painting</div>
+    </div>
+    </section>
+
+
+  <section class="service-cards">
+    <div class="card">
+      <img src="images/3d-evalution.jpeg" alt="Consulting">
+      <div class="label">3D-Evalution</div>
+    </div>
+
+    <div class="card">
+      <img src="images/electri-work.png" alt="Estimate">
+      <div class="label">E</div>Electric Work
+    </div>
+    </section>
+
+
+
+  <section class="service-cards">
+    <div class="card">
+      <img src="images/interior-work.png" alt="Consulting">
+      <div class="label">Interior Work</div>
+    </div>
+
+    <div class="card">
+      <img src="images/renovation.png" alt="Estimate">
+      <div class="label">Renovation</div>
+    </div>
+    </section>
+
+<section class="service-cards">
+    <div class="card">
+      <img src="images/interior-desigen.png" alt="Consulting">
+      <div class="label">Interior</div>
+    </div>
+
+    <div class="card">
+      <img src="images/carpentry-work.png" alt="Estimate">
+      <div class="label">Carpentry</div>
+    </div>
+
+    </section>
+  <footer>
+    <div class="footer-section footer-logo">
+      <img src="images/logo.jpg" alt="Logo">
+      <h2>NAGERCOIL BUILDERS</h2>
+      <p>Nagercoil Builders offering a range of services from residential and commercial building to interior design and renovation.</p>
+
+       <div class="social-icons">
+        <a href="#"><img src="images/inst.png" alt="Instagram"></a>
+        <a href="#"><img src="images/you.png" alt="YouTube"></a>
+        <a href="#"><img src="images/face.png" alt="Facebook"></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Categories</h3>
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Plans and Pricing</a>
+        <a href="#">Projects</a>
+      </div>
+    </div>
+
+   <div class="footer-column">
+    <h3 class="footer-title">Contact Us</h3>
+    <ul class="contact-info">
+      <li><i class="fa-solid fa-phone"></i> +91 9597751076, 9443102048</li>
+      <li><i class="fa-solid fa-envelope"></i> nagercoilbuilders2@gmail.com</li>
+      <li><i class="fa-solid fa-globe"></i> www.nagercoilbuilders.com</li>
+      <li><i class="fa-solid fa-location-dot"></i> 4/26A Adaikalapattinam, Pavoorchatram.</li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

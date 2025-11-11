@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .container{
+        display: flex;
+        max-width: 900px;
+        margin: 50px auto;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .leftside{
+            width: 40%;
+            flex: 1;
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe680 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .leftside h2{
+            font-size: 30px;
+            margin-bottom: 10px;
+
+        }
+        .leftside h2 span{
+            color: orange;
+        }
+        .leftside p{
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .leftside img {
+            width: 70%;
+            height: auto;
+}
+        .rightside{
+            width: 60%;
+            flex: 1;
+            background-color: white;
+            margin-left: 40px;
+            position: relative;
+         }
+        .rightside h2 span{
+            color: orange;
+        }
+        .group{
+            margin-bottom: 20px;
+        }
+      input[type="text"] {
+        width: 80%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid orange;
+      }
+      select{
+        width: 80%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid orange;
+      }
+      textarea{
+        width: 80%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid orange;
+      }
+      button{
+        width: 80%;
+        height: 30px;
+        border-radius: 5px;
+        background-color: orange;
+        color: white;
+      }
+      
+
+      
+    </style>
+</head>
+<body>
+    
+        <div class="container">
+    <div class="leftside">
+        <h2>Do you have a <span>Questions?</span></h2>
+        <p>Serving the greater Seattle area beyond. For more<br> information on our services, or to inquire about a future<br> project, give us a call!</p>
+        <img src="image/form.png" alt="formimage">
+    </div>
+    
+    <div class="rightside">
+        <h2>Quick <span> Enquiry</span> </h2>
+
+        <div>
+        <form>
+        <div class="group">
+        <label>Full Name</label><br>
+        <input type="text" placeholder="Enter the name" required">
+        </div><br>
+       
+        
+        <div class="group">
+        <label>Email Address</label><br>
+        <input type="text" placeholder="Enter Email Address" required> 
+        </div><br>
+
+        <div class="group">
+        <label>Phone Number</label><br>
+        <input type="text" placeholder="Enter Phone number" required> 
+        </div><br>
+
+        <div class="group">
+        <label for="Services">Select Services</label><br>
+        <select id="Services" name="Services">
+        <option value="">--Select--</option>
+        <option value="Services">Services</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Estimate">Estimate</option>
+        <option value="Plan&Design">Plan&Design</option>
+        <option value="Construction">Construction</option>
+        <option value="Renovation">Renovation</option>
+    </select>
+    
+    </div><br>
+
+    <div class="group">
+    <label for="message">Your Message</label><br>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    </div><br>
+
+    <div class="group">
+    <input type="checkbox" id="name" required>
+    <label for="name">I'm not a robot</label>
+    </div><br>
+
+    <div class="group">
+    <button type="submit" value="Submit">Submit</button>
+        </div>
+    </div>
+    </div>
+    </form>
+    
+</body>
+</html>
